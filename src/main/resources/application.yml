@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: cacheDemo
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: true
+        region:
+          factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+        jdbc:
+          batch_size: 50 # 每次批量處理 50 條記錄
+        order_inserts: true  # 依照table進行排序插入
+        order_updates: true  # 依照table進行排序更新
+        generate_statistics: true
+logging:
+  level:
+    org.hibernate.stat: DEBUG
+#    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.cache: TRACE
+    org.hibernate.cache.internal: TRACE
+    org.hibernate.cache.spi: TRACE

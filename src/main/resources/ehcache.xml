@@ -1,0 +1,20 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <!-- 默認cache設置 -->
+    <cache alias="default">
+        <expiry>
+            <ttl unit="seconds">600</ttl> <!-- cache存活時間 -->
+        </expiry>
+        <heap unit="entries">1000</heap> <!-- 最大cache條目數 -->
+    </cache>
+
+    <!-- Hibernate cache設置 -->
+    <cache alias="com.example.entity.Product">
+        <expiry>
+            <ttl unit="seconds">600</ttl> <!-- cache條目的存活時間 -->
+        </expiry>
+        <heap unit="entries">1000</heap>
+    </cache>
+</config>
