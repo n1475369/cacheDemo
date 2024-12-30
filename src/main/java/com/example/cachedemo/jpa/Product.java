@@ -15,7 +15,10 @@ public class Product {
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
+
+    private Double price;
 
     public Long getId() {
         return id;
@@ -41,6 +44,5 @@ public class Product {
         this.price = price;
     }
 
-    private Double price;
 
 }

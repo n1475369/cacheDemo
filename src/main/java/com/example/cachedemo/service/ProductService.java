@@ -4,6 +4,7 @@ import com.example.cachedemo.jpa.Product;
 import com.example.cachedemo.jpa.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+//    @Transactional
     public void testCache() {
         // 保存一條數據
         Product product = save("JCache Product",99.99);

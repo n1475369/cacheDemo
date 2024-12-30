@@ -19,8 +19,8 @@ public class CacheDemoApplication implements CommandLineRunner {
 
     @Override
     public void run(final String... args) throws Exception {
-//        productService.testCache();
+        productService.testCache();
 //        productService.testCacheOOM();
-        productService.testSaveAllPerformance();
+//        productService.testSaveAllPerformance();
     }
 }
