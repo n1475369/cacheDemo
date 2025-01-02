@@ -15,13 +15,13 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-//    @Transactional
+    @Transactional
     public void testCache() {
         // 保存一條數據
         Product product = save("JCache Product",99.99);
         Long id = product.getId();
 
-        // 第一次查詢：應從數據庫讀取並加入cache
+        // 第一次查詢：應直接從cache讀取
         Product fetched1 = getProductById(id);
 
         // 第二次查詢：應直接從cache讀取
