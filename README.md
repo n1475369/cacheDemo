@@ -1,2 +1,2 @@
 # cacheDemo
-測試spring data jpa 二級cache
+測試spring data jpa second level cache
